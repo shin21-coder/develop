@@ -1,6 +1,16 @@
 module.exports = {
+  pathPrefix: "/reponame",
+  siteMetadata: {
+    title: `gatsby MDX blog`,
+    description: `awesome blog built with`,
+    titleTemplate: `%s | MDX blog`,
+    url: `https://gatsby-new-mdx.netlify.app/`,
+    image: `mainImg.png`,
+    twitterUsername:`@shin`,
+  },
   plugins: [
-    `gatsby-plugin-mdx`,
+
+    // `gatsby-plugin-mdx`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-remark-images`,
@@ -20,12 +30,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-mdx`,
-    //   options: {
-    //     gatsbyRemarkPlugins: [{ resolve: 'gatsby-remark-images' }],
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [{ resolve: 'gatsby-remark-images' }],
+      },
+    },
     {
       resolve: `gatsby-source-instagram`,
       options: {
